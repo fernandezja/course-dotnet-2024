@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Curso.Core.Datos.Interfaces\Curso.Core.Datos.Interfaces.csproj" />
+    <ProjectReference Include="..\Curso.Core.DatosEF\Curso.Core.DatosEF.csproj" />
+    <ProjectReference Include="..\Curso.Core.Datos\Curso.Core.Datos.csproj" />
+  </ItemGroup>
+
+</Project>
