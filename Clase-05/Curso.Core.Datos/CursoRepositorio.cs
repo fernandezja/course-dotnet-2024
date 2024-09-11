@@ -1,5 +1,5 @@
 ﻿using Curso.Core.Datos.Interfaces;
-using Curso.Core.Entidades;
+using Curso.Core.Entidades.Filtros;
 using Microsoft.Data.SqlClient;
 using System.Data;
 
@@ -14,9 +14,14 @@ namespace Curso.Core.Datos
             throw new NotImplementedException();
         }
 
-        public List<Curso.Core.Entidades.Curso> ObtenerListado()
+        public List<Entidades.Curso> Buscar(BuscarFiltro filtro)
         {
-            var cursos = new List<Curso.Core.Entidades.Curso>();
+            throw new NotImplementedException();
+        }
+
+        public List<Entidades.Curso> ObtenerListado()
+        {
+            var cursos = new List<Entidades.Curso>();
 
             //1 Conexion
             //var sqlConnectionBuilder = new SqlConnectionStringBuilder();
