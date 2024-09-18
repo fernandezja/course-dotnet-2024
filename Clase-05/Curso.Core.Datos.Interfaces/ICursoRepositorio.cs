@@ -7,5 +7,7 @@ namespace Curso.Core.Datos.Interfaces
         List<Entidades.Curso> ObtenerListado();
         List<Entidades.Curso> Buscar(string textoABuscar);
         List<Entidades.Curso> Buscar(BuscarFiltro filtro);
-    }
+        bool Crear(Entidades.Curso curso);
+        Entidades.Curso BuscarPorNombreExacto(string cursoNombre);
+    } 
 }

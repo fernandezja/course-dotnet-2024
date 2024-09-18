@@ -32,7 +32,12 @@
             dataGridView1 = new DataGridView();
             btnBuscar = new Button();
             txtTextoABuscar = new TextBox();
+            pnlCurso = new Panel();
+            btnGuardar = new Button();
+            label1 = new Label();
+            txtNombre = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            pnlCurso.SuspendLayout();
             SuspendLayout();
             // 
             // button1
@@ -70,11 +75,48 @@
             txtTextoABuscar.Size = new Size(219, 23);
             txtTextoABuscar.TabIndex = 3;
             // 
+            // pnlCurso
+            // 
+            pnlCurso.Controls.Add(txtNombre);
+            pnlCurso.Controls.Add(label1);
+            pnlCurso.Controls.Add(btnGuardar);
+            pnlCurso.Location = new Point(32, 272);
+            pnlCurso.Name = "pnlCurso";
+            pnlCurso.Size = new Size(314, 110);
+            pnlCurso.TabIndex = 4;
+            // 
+            // btnGuardar
+            // 
+            btnGuardar.Location = new Point(19, 68);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(75, 23);
+            btnGuardar.TabIndex = 0;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(19, 5);
+            label1.Name = "label1";
+            label1.Size = new Size(51, 15);
+            label1.TabIndex = 1;
+            label1.Text = "Nombre";
+            // 
+            // txtNombre
+            // 
+            txtNombre.Location = new Point(19, 23);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(260, 23);
+            txtNombre.TabIndex = 2;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(pnlCurso);
             Controls.Add(txtTextoABuscar);
             Controls.Add(btnBuscar);
             Controls.Add(dataGridView1);
@@ -83,6 +125,8 @@
             Text = "Form1";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            pnlCurso.ResumeLayout(false);
+            pnlCurso.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -93,5 +137,9 @@
         private DataGridView dataGridView1;
         private Button btnBuscar;
         private TextBox txtTextoABuscar;
+        private Panel pnlCurso;
+        private TextBox txtNombre;
+        private Label label1;
+        private Button btnGuardar;
     }
 }

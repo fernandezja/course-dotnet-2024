@@ -17,17 +17,20 @@ var titulo1 = configuration["Titulo"];
 var titulo2 = configuration.GetSection("Titulo").Value;
 var connectionString1 = configuration.GetSection("ConnectionStrings:CursoConnectionString").Value;
 
-var config = new AppConfig(){
+var appConfig = new AppConfig(){
     Titulo = configuration.GetSection("Titulo").Value,
     ConnectionString = configuration.GetConnectionString("CursoConnectionString")
 };
 
-var cursoNegocio = new CursoNegocio(config);
+var cursoNegocio = new CursoNegocio(appConfig);
+
 var cursos = cursoNegocio.ObtenerListado();
+
 foreach (var curso in cursos)
 {
     Console.WriteLine($"Curso: {curso.CursoNombre}");
 }
+
 Console.WriteLine();
 Console.WriteLine($"Paginado ----------------------------");
 Console.WriteLine();
@@ -35,11 +38,12 @@ Console.WriteLine();
 var filtro = new BuscarFiltro()
 {
     TextoABuscar = "",
-    PageIndex = 3,
+    PageIndex = 1,
     PageSize = 3
 };
 
 cursos = cursoNegocio.Buscar(filtro);
+
 foreach (var curso in cursos)
 {
     Console.WriteLine($"Curso: {curso.CursoNombre}");

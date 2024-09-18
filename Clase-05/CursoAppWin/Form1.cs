@@ -11,13 +11,19 @@ namespace CursoAppWin
         public Form1()
         {
             var config = new AppConfig();
-            
+            config.ConnectionString = Properties.Settings.Default.CursoConnectionString;
+
             _cursoNegocio = new CursoNegocio(config);
 
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+            Actualizar();
+        }
+
+        private void Actualizar()
         {
             //var cursoNegocio = new CursoNegocio();
             var cursos = _cursoNegocio.ObtenerListado();
@@ -36,6 +42,38 @@ namespace CursoAppWin
         private void Form1_Load(object sender, EventArgs e)
         {
             this.Text = Properties.Settings.Default.Titulo;
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            var cursoNuevo = new Curso.Core.Entidades.Curso()
+            {
+                CursoNombre = txtNombre.Text
+            };
+
+            var seCreo = false;
+
+            try
+            {
+                seCreo = _cursoNegocio.Crear(cursoNuevo);
+            }
+            catch (Exception ex)
+            {
+;               MessageBox.Show($"Error: {ex.Message}");
+            }
+            
+
+
+            if (seCreo)
+            {
+                MessageBox.Show("Curso creado correctamente");
+            }
+            else
+            {
+                MessageBox.Show("Error al crear el curso");
+            }
+
+            Actualizar();
         }
     }
 }

@@ -31,5 +31,17 @@ namespace CursoAppWin.Properties {
                 return ((string)(this["Titulo"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Persist Security Info=True;Initial Catalog=CursoDemo;Data Source=.; Application N" +
+            "ame=Curso; Integrated Security=True;MultipleActiveResultSets=True;TrustServerCer" +
+            "tificate=True;")]
+        public string CursoConnectionString {
+            get {
+                return ((string)(this["CursoConnectionString"]));
+            }
+        }
     }
 }

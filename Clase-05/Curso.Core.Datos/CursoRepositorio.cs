@@ -61,5 +61,15 @@ namespace Curso.Core.Datos
 
             return cursos;
         }
+
+        public bool Crear(Entidades.Curso curso)
+        {
+            return true;
+        }
+
+        public Entidades.Curso BuscarPorNombreExacto(string cursoNombre)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

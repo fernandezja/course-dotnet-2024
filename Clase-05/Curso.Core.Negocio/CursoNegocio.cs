@@ -35,5 +35,22 @@ namespace Curso.Core.Negocio
 
             return _cursoRepositorio.Buscar(filtro);
         }
+
+        public bool Crear(Entidades.Curso curso)
+        {
+            var cursoExistente = BuscarPorNombreExacto(curso.CursoNombre);
+           
+            if (cursoExistente is not null)
+            {
+                throw new ArgumentException("Ya existe un curso con el mismo nombre");
+            }
+
+            return _cursoRepositorio.Crear(curso);
+        }
+
+        private Entidades.Curso BuscarPorNombreExacto(string cursoNombre)
+        {
+            return _cursoRepositorio.BuscarPorNombreExacto(cursoNombre);
+        }
     }
 }
