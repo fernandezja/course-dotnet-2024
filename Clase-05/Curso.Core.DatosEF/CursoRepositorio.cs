@@ -89,5 +89,42 @@ namespace Curso.Core.DatosEF
 
             return query.FirstOrDefault();
         }
+
+
+        public bool Eliminar(int cursoId)
+        {
+            var query = DbContext.Cursos
+                             .Where( c => c.CursoId == cursoId);
+
+            var cursoParaEliminar = query.FirstOrDefault();
+
+            if (cursoParaEliminar is not null)
+            {
+                DbContext.Cursos.Remove(cursoParaEliminar);
+
+                DbContext.SaveChanges();
+
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool Editar(Entidades.Curso curso)
+        {
+
+            var query = DbContext.Cursos
+                             .Where(c => c.CursoId == curso.CursoId);
+
+            var cursoParaEditar = query.FirstOrDefault();
+
+            cursoParaEditar.CursoNombre = curso.CursoNombre;
+
+            //DbContext.Attach
+
+            DbContext.SaveChanges();
+
+            return true;
+        }
     }
 }

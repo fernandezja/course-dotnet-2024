@@ -71,5 +71,15 @@ namespace Curso.Core.Datos
         {
             throw new NotImplementedException();
         }
+
+        public bool Eliminar(int cursoId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Editar(Entidades.Curso curso)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

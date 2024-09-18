@@ -33,11 +33,17 @@
             btnBuscar = new Button();
             txtTextoABuscar = new TextBox();
             pnlCurso = new Panel();
-            btnGuardar = new Button();
-            label1 = new Label();
             txtNombre = new TextBox();
+            label1 = new Label();
+            btnGuardar = new Button();
+            btnEliminar = new Button();
+            panel1 = new Panel();
+            txtNombreParaEditar = new TextBox();
+            label2 = new Label();
+            btnEditar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             pnlCurso.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // button1
@@ -54,9 +60,12 @@
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(32, 41);
+            dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(643, 192);
             dataGridView1.TabIndex = 1;
+            dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
             // 
             // btnBuscar
             // 
@@ -85,15 +94,12 @@
             pnlCurso.Size = new Size(314, 110);
             pnlCurso.TabIndex = 4;
             // 
-            // btnGuardar
+            // txtNombre
             // 
-            btnGuardar.Location = new Point(19, 68);
-            btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(75, 23);
-            btnGuardar.TabIndex = 0;
-            btnGuardar.Text = "Guardar";
-            btnGuardar.UseVisualStyleBackColor = true;
-            btnGuardar.Click += btnGuardar_Click;
+            txtNombre.Location = new Point(19, 23);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(260, 23);
+            txtNombre.TabIndex = 2;
             // 
             // label1
             // 
@@ -104,18 +110,70 @@
             label1.TabIndex = 1;
             label1.Text = "Nombre";
             // 
-            // txtNombre
+            // btnGuardar
             // 
-            txtNombre.Location = new Point(19, 23);
-            txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(260, 23);
-            txtNombre.TabIndex = 2;
+            btnGuardar.Location = new Point(19, 68);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(75, 23);
+            btnGuardar.TabIndex = 0;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.Enabled = false;
+            btnEliminar.Location = new Point(368, 269);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(75, 23);
+            btnEliminar.TabIndex = 5;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(txtNombreParaEditar);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(btnEditar);
+            panel1.Location = new Point(460, 272);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(314, 115);
+            panel1.TabIndex = 5;
+            // 
+            // txtNombreParaEditar
+            // 
+            txtNombreParaEditar.Location = new Point(19, 23);
+            txtNombreParaEditar.Name = "txtNombreParaEditar";
+            txtNombreParaEditar.Size = new Size(260, 23);
+            txtNombreParaEditar.TabIndex = 2;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(19, 5);
+            label2.Name = "label2";
+            label2.Size = new Size(51, 15);
+            label2.TabIndex = 1;
+            label2.Text = "Nombre";
+            // 
+            // btnEditar
+            // 
+            btnEditar.Location = new Point(19, 68);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(75, 23);
+            btnEditar.TabIndex = 0;
+            btnEditar.Text = "Editar";
+            btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(panel1);
+            Controls.Add(btnEliminar);
             Controls.Add(pnlCurso);
             Controls.Add(txtTextoABuscar);
             Controls.Add(btnBuscar);
@@ -127,6 +185,8 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             pnlCurso.ResumeLayout(false);
             pnlCurso.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -141,5 +201,10 @@
         private TextBox txtNombre;
         private Label label1;
         private Button btnGuardar;
+        private Button btnEliminar;
+        private Panel panel1;
+        private TextBox txtNombreParaEditar;
+        private Label label2;
+        private Button btnEditar;
     }
 }

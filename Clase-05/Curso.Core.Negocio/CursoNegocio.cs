@@ -52,5 +52,15 @@ namespace Curso.Core.Negocio
         {
             return _cursoRepositorio.BuscarPorNombreExacto(cursoNombre);
         }
+
+        public bool Eliminar(int cursoId)
+        {
+            return _cursoRepositorio.Eliminar(cursoId);
+        }
+
+        public bool Editar(Entidades.Curso curso)
+        {
+            return _cursoRepositorio.Editar(curso);
+        }
     }
 }
