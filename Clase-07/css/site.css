@@ -1,0 +1,15 @@
+body{
+    background-color: #f2fbda;
+}
+h2,p {
+    color:blue;
+}
+
+.text-red{
+    color: red;
+}
+
+.font-size-50{
+    font-size: 50px;
+    color: blueviolet;
+}

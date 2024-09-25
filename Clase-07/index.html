@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"  href="css/site.css" />
+
+    <style>
+      
+        #form1{
+            background-color: greenyellow;
+            margin-right: 20px;
+            padding: 20px;
+        }
+    </style>
+    
+</head>
+<body>
+    <H1 class="font-size-50">Hola       Mundo! v2</h1>
+        <h2>Un 
+            
+            
+            subtitulo...</h2>
+        <p  class="text-red font-size-50">Esto es un parrafo 
+            <br />
+            
+            de 2 &nbsp;&nbsp;&nbsp;&nbsp; lineas.</p>
+
+
+    <hr />
+    
+    <font>ddd</font>
+    <CUALQUIER>etiqueta</CUALQUIER>
+
+    <form id="form1" method="get" action="">
+        <label>Nombre</label>
+        <input type="text" id="txtNombre" name="nombre" />
+        <br/> 
+        <input type="submit" value="Enviar" />
+    </form>
+
+    <script>
+        console.log('Demo');
+        
+        document.write("HOLA... CHAU!");
+
+        var body = document.getElementsByTagName("body");
+
+        var form1 = document.getElementById('form1');
+        
+       
+        form1.addEventListener('submit', (e) => {
+            
+            var esValido = true;
+            var txtNombre = document.getElementById('txtNombre');
+
+            if (txtNombre.value == ''){
+                esValido = false;
+                alert('Debe completar el nombre');
+            }
+            
+            if(esValido==false) {
+                e.preventDefault();
+            }
+
+
+        });
+
+    </script>
+</body>
+</html>
