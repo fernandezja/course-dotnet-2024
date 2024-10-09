@@ -1,0 +1,19 @@
+﻿@model List<ShopDemo.Core.Entidades.Producto>
+@{
+    ViewData["Title"] = "Productos";
+}
+
+<h1 class="">Productos</h1>
+
+Mensajes:
+<span>@ViewData["Mensaje"]</span>
+<span>@ViewData["Mensaje2"]</span>
+<span>@ViewBag.Mensaje2</span>
+<span>@ViewBag.Mensajeee2</span>
+
+<ul>
+    @foreach (var producto in Model)
+    {
+        <li>@producto.Nombre | $@producto.Precio</li>
+    }
+</ul>
