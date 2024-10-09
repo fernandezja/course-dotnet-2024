@@ -14,6 +14,26 @@ Mensajes:
 <ul>
     @foreach (var producto in Model)
     {
-        <li>@producto.Nombre | $@producto.Precio</li>
+        <li>
+                @producto.Nombre | $@producto.Precio
+@* 
+            <a class="btn btn-primary"
+                    asp-controller="Carrito" 
+                   asp-action="Agregar" 
+                   asp-route-productoId="@producto.ProductoId">+</a> *@
+
+                <form asp-controller="Carrito" 
+                      asp-action="Agregar" 
+                      method="post">
+
+                    <input type="hidden" 
+                           name="productoId" 
+                           value="@producto.ProductoId" />
+
+                    <input type="submit" class="btn btn-primary" value="+" />
+                 
+                </form>
+        
+        </li>
     }
 </ul>

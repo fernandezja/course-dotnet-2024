@@ -4,6 +4,7 @@ using ShopDemo.Core.Negocio;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddSingleton(typeof(Carrito));
 builder.Services.AddScoped(typeof(ProductoRepository));
 builder.Services.AddScoped(typeof(ProductoNegocio));
 

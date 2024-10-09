@@ -1,0 +1,14 @@
+﻿@using ShopDemo.Core.Negocio
+@model Carrito
+
+<ul>
+    @foreach (var item in Model.Items)
+    {
+        <li>
+                @item.Producto.Nombre | Cantidad: @item.Cantidad 
+                <br />
+                $@item.Subtotal
+
+        </li>
+    }
+</ul>
