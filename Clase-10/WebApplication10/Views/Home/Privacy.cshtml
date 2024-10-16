@@ -1,0 +1,16 @@
+﻿@model dynamic
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Use this page to detail your site's privacy policy.</p>
+
+<h2>Perfil de @Model.Name</h2>
+<ul>
+    <li>Nombre completo: @Model.NombreCompleto</li>
+</ul>
+
+<form action="/auth/logout" method="post"> 
+    <input type="submit" class="btn btn-danger" value="Salir" />
+</form>
