@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+</head>
+<body>
+  <h1>Weather App</h1>
+  <div id="weather-info">
+    <p>Loading weather...</p>
+  </div>
+
+  <script>
+    
+    const APIURL = 'https://localhost:7004/WeatherForecast';
+
+    function  getWeather() {
+      
+        //let weatherInfo = document.getElementById('weather-info');
+        //weatherInfo.innerHTML = 'OK';
+
+        fetch(APIURL)
+            .then(response => response.json())
+            .then(data => {
+                let weatherInfo = document.getElementById('weather-info');
+                //weatherInfo.innerHTML = 'OK';
+                var weatherInfoHtml = '';
+
+                data.forEach(item => {
+                    weatherInfoHtml += `
+                                    <h2>Date ${item.date}</h2>
+                                    <p>Temperature: ${item.temperatureC}°C</p>
+                                    <p>Condition: ${item.sumary}</p>
+                                    <hr />
+                                    `;
+
+                });
+                weatherInfo.innerHTML = weatherInfoHtml;
+
+            })
+            .catch(error => {
+                document.getElementById('weather-info').innerHTML = `<p>Error: ${error}</p>`;
+            });
+
+
+    }
+
+    
+    window.onload = getWeather;
+    
+  </script>
+</body>
+</html>

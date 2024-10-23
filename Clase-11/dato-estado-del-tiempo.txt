@@ -1,0 +1,9 @@
+Ciudad,Pais,Temperatura
+Corrientes; Argentina, 35
+
+XML:
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+XML:
+
