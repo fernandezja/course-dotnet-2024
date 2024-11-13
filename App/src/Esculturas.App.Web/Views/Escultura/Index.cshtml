@@ -1,0 +1,46 @@
+﻿@model Esculturas.Core.Entidades.ContenidoPaginado<Esculturas.Core.Entidades.EsculturaCompleta>
+@{
+}
+
+<div class="row">
+    @foreach (var escultura in Model.Items)
+    {
+        <div class="card escultura-card" style="width: 18rem;">
+            <figure><img src="/img/escultura-demo.jpg"
+                class="card-img-top escultura-card-img" 
+                alt="@escultura.Titulo" />
+            </figure>
+            <div class="card-body">
+                <h5 class="card-title">@escultura.Titulo [@(escultura.EsculturaId)]</h5>
+                <p class="card-text">@escultura.Descripcion</p>
+                <span class="text-muted">@escultura.Tematica</span>
+            </div>
+        </div>
+    }
+</div>
+
+@if (Model.ExisteAnterior)
+{
+    <text>
+         <form method="get" action="">
+            <input type="hidden" name="pagina" value="@Model.PaginaAnterior" />
+            <input type="submit" name="name" value="Anterior" />
+        </form>
+    </text>
+}
+
+
+@if (Model.ExisteSiguiente)
+{
+    <text>
+        <form method="get" action="">
+            <input type="hidden" name="pagina" value="@Model.PaginaSiguiente" />
+            <input type="submit" value="Siguiente" />
+        </form>
+    </text>
+}
+
+
+
+
+

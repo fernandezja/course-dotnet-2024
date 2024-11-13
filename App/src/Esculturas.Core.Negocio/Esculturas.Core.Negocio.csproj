@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Esculturas.Core.Datos\Esculturas.Core.Datos.csproj" />
+    <ProjectReference Include="..\Esculturas.Core.Entidades\Esculturas.Core.Entidades.csproj" />
+  </ItemGroup>
+
+</Project>
